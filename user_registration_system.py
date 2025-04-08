@@ -14,11 +14,24 @@ def valid_email(s):
         return True
     return False
 
+#Function to check if valid password:
+def valid_password(s):
+    check1 = r".{8,}"
+    if re.match(check1, s):
+        print("Valid")
+        
+    return False
 
 def valid_number(s):
     pattern= r"[\d]{2} [0-9]{10}"
     if re.match(pattern, s):
         return True
+    return False
+
+def valid_password(s):
+    check1 = r".{8,}"
+    if re.match(check1, s):
+        print("Valid")
     return False
 
 first_name=input("Enter the First Name: ")
@@ -42,7 +55,7 @@ if valid_name(first_name):
             if (valid_number(phn)):
                 print("Valid phone number!!")
                 
-                
+                #Valid Password
             else:
                 print("Not Valid phone number!")
         else:
