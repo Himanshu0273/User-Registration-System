@@ -14,7 +14,8 @@ def valid_email(s):
         return True
     return False
 
-#Function to check if valid password:def valid_password(s):
+#Function to check if valid password:
+def valid_password(s):
     # check1 = r"^(?=.*[A-Z])(?=.*\d).{8,}$"
     # if re.match(check1, s):
     #     print("Valid Password")
