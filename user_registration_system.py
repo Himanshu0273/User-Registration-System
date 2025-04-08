@@ -16,10 +16,11 @@ def valid_email(s):
 
 #Function to check if valid password:
 def valid_password(s):
-    check1 = r".{8,}"
+    check1 = r"^(?=.*[A-Z]).{8,}$"
     if re.match(check1, s):
         print("Valid")
-        
+        # if re.search(r"[A-Z]", s):
+        #     print("Has capital!")
     return False
 
 def valid_number(s):
