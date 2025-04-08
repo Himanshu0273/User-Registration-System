@@ -1,4 +1,4 @@
-This project validates a user's password based on specific rules.
+This function validates a user's password based on specific rules.
 
 The password must contain exactly one special character. The accepted special characters are: !, @, #, $, %, ^, &, and *. The password should not have zero or more than one special character from this set.
 
