@@ -14,6 +14,12 @@ def valid_email(s):
         return True
     return False
 
+#Function to check if the phone number is correct
+def valid_number(s):
+    pattern= r"[\d]{2} [0-9]{10}"
+    if re.match(pattern, s):
+        return True
+    return False
 #Function to check if valid password:
 def valid_password(s):
     # check1 = r"^(?=.*[A-Z])(?=.*\d)(?=(?:[^!@#$%^&*]*[!@#$%^&*]){1}[^!@#$%^&*$]*$).{8,}$"
@@ -34,31 +40,25 @@ def valid_password(s):
                 special_chars = list(re.finditer(r"[!@#$%^&*]", s))
                 if len(special_chars)==1:
                     print("Has exactly 1 special character!")
+                
                 elif len(special_chars)==0:
                     print("0 special characters found")
+                    return False
                 else:
                     print("More than 1 special characters found")
+                    return False
             else:
                 print("No numeric characters!")
+                return False
         
         else:
             print("No Capital Letter found!")
+            return False
     else:
         print("Length less than 8!")
-    return False
-
-
-def valid_number(s):
-    pattern= r"[\d]{2} [0-9]{10}"
-    if re.match(pattern, s):
-        return True
-    return False
-
-def valid_password(s):
-    check1 = r".{8,}"
-    if re.match(check1, s):
-        print("Valid")
-    return False
+        return False
+    
+    return True
 
 first_name=input("Enter the First Name: ")
 #Check first name
@@ -82,6 +82,14 @@ if valid_name(first_name):
                 print("Valid phone number!!")
                 
                 #Valid Password
+                password = input("Enter your Password: ")
+                # print(valid_password(password))
+                if valid_password(password):
+                    print("Valid Password")
+                
+                else:
+                    print("Invalid Password!!!\nRules:\nLength >= 8\nMust have a capital Letter\nMust have atleast 1 digit\nMust have exactly 1 special character")
+                
             else:
                 print("Not Valid phone number!")
         else:
