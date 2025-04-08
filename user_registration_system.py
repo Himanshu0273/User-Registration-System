@@ -14,6 +14,16 @@ def valid_email(s):
         return True
     return False
 
+#Function to check for valid phone number
+
+def valid_number(s):
+    pattern= r"[\d]{2} [0-9]{10}"
+    if re.match(pattern, s):
+        return True
+    return False
+
+
+#Main Function execution
 first_name=input("Enter the First Name: ")
 #Check first name
 if valid_name(first_name):
@@ -29,6 +39,15 @@ if valid_name(first_name):
         if valid_email(email):
             print("Email Valid!!")
             
+            #Check Valid Phone Number:
+            phn = input("Enter Phone number: ")
+            
+            if (valid_number(phn)):
+                print("Valid phone number!!")
+                
+                
+            else:
+                print("Not Valid phone number!")
         else:
             print("Invalid Email!")
         

@@ -1,8 +1,22 @@
-Last Name Validation
-This project validates a user's last name based on specific rules.
+This function validates a user's mobile number based on specific rules.
 
-The last name must start with a capital letter and contain at least three alphabetic characters. It should not include any digits or special characters.
+The mobile number must follow a predefined format where a country code is followed by a space and then a 10-digit mobile number. The country code must consist of exactly two digits, and the mobile number must consist of exactly ten digits without any special characters, spaces (other than the one separating the country code and number), or alphabets.
 
-The regular expression used for validation is: ^[A-Z][a-zA-Z]{2,}$.
+For example, a valid mobile number would be 91 9919819801, where 91 is the country code and 9919819801 is the 10-digit mobile number. Any deviation from this format, such as missing space, incorrect number of digits, or additional characters, would result in an invalid mobile number.
 
-Some examples of valid last names are "Kumar" and "Sharma". Examples of invalid last names include "kumar" (starts with a lowercase letter), "Ku" (less than three characters), and "Kumar3" (contains a digit).
+The regular expression used for validation is:
+^\d{2}\s\d{10}$
+
+Some examples of valid mobile numbers include:
+
+91 9919819801
+
+44 7894561230
+
+Examples of invalid mobile numbers include:
+
+919919819801 (missing space)
+
+91 99198 (less than 10 digits)
+
+91-9919819801 (incorrect separator)
