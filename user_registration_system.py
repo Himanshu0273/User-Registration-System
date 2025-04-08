@@ -79,7 +79,7 @@ if valid_name(first_name):
             #Check Valid Phone Number:
             phn = input("Enter Phone number: ")
             
-            if (valid_number(phn)):
+            if (valid_number(phn)): 
                 print("Valid phone number!!")
                 
                 #Valid Password
