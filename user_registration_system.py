@@ -9,6 +9,7 @@ def valid_name(s):
     
 #Function for valid email:
 def valid_email(s):
+    #This checks for all the valid mails
     pattern = r"^[\w]+(\.[\w]+)?@[\w]+\.(com|co(\.in)?)$"
     if re.match(pattern, s):
         return True
