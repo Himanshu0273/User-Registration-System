@@ -16,7 +16,7 @@ def valid_email(s):
 
 #Function to check if valid password:
 def valid_password(s):
-    # check1 = r"^(?=.*[A-Z])(?=.*\d).{8,}$"
+    # check1 = r"^(?=.*[A-Z])(?=.*\d)(?=(?:[^!@#$%^&*]*[!@#$%^&*]){1}[^!@#$%^&*$]*$).{8,}$"
     # if re.match(check1, s):
     #     print("Valid Password")
     # else:
@@ -30,7 +30,14 @@ def valid_password(s):
             
             if re.search(r"[0-9]", s):
                 print("Has a number")
-            
+                
+                special_chars = list(re.finditer(r"[!@#$%^&*]", s))
+                if len(special_chars)==1:
+                    print("Has exactly 1 special character!")
+                elif len(special_chars)==0:
+                    print("0 special characters found")
+                else:
+                    print("More than 1 special characters found")
             else:
                 print("No numeric characters!")
         
