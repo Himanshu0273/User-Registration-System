@@ -1,13 +1,8 @@
-Password Validation - Rule 2
+Password Numeric Validation
+This project validates a user's password based on specific rules.
 
-This project validates a user's password based on a specific rule.
+The password must contain at least one numeric digit (0–9). It ensures that users create passwords that are not only alphabetic but also include numerical complexity, thereby increasing security. The password must also meet all previously defined rules to be considered valid.
 
-The password must contain at least one uppercase letter (A-Z) to be considered valid. It should ensure that users create passwords that are not purely lowercase, enhancing password strength and security.
+The regular expression used for this validation is: ^(?=.*\d).+$.
 
-The regular expression used for validation is:
-^(?=.*[A-Z]).+$
-
-Some examples of valid passwords are "Password", "HelloWorld123", and "MYpassword!".
-Examples of invalid passwords include "password" (no uppercase letters) and "hello123" (all lowercase).
-
-All defined rules must be satisfied for a password to be considered valid.
+Some examples of valid passwords are "Password1" and "Hello2World". Examples of invalid passwords include "Password" (no digit) and "HelloWorld" (no digit).

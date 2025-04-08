@@ -14,14 +14,31 @@ def valid_email(s):
         return True
     return False
 
-#Function to check if valid password:
-def valid_password(s):
-    check1 = r"^(?=.*[A-Z]).{8,}$"
+#Function to check if valid password:def valid_password(s):
+    # check1 = r"^(?=.*[A-Z])(?=.*\d).{8,}$"
+    # if re.match(check1, s):
+    #     print("Valid Password")
+    # else:
+    #     print("Invalid Password")
+        
+    check1 = r".{8,}"
     if re.match(check1, s):
-        print("Valid")
-        # if re.search(r"[A-Z]", s):
-        #     print("Has capital!")
+        print("Valid Length")
+        if re.search(r"[A-Z]", s):
+            print("Has capital!")
+            
+            if re.search(r"[0-9]", s):
+                print("Has a number")
+            
+            else:
+                print("No numeric characters!")
+        
+        else:
+            print("No Capital Letter found!")
+    else:
+        print("Length less than 8!")
     return False
+
 
 def valid_number(s):
     pattern= r"[\d]{2} [0-9]{10}"
