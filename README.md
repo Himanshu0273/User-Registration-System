@@ -1,4 +1,4 @@
-This project validates a user's mobile number based on specific rules.
+This function validates a user's mobile number based on specific rules.
 
 The mobile number must follow a predefined format where a country code is followed by a space and then a 10-digit mobile number. The country code must consist of exactly two digits, and the mobile number must consist of exactly ten digits without any special characters, spaces (other than the one separating the country code and number), or alphabets.
 
