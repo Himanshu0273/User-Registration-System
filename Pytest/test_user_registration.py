@@ -5,7 +5,10 @@ import random
 import string
 from loguru import logger
 
-logger.add("failed_testcases.log", level="ERROR")
+logger.add("logs/error_{time}.log", 
+           rotation="1 hour",
+           retention="2 days",
+           level="ERROR")
 fake = Faker()
 
 #----------------NAME----------------
