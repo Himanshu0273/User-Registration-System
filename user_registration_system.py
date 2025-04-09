@@ -61,44 +61,47 @@ def valid_password(s):
     
     return True
 
-first_name=input("Enter the First Name: ")
-#Check first name
-if valid_name(first_name):
-    print("Valid First Name, Continue ahead!!")
-    
-    #Check Last Name
-    last_name = input("Enter the Last Name: ")
-    if valid_name(last_name):
-        print("Valid Last Name, Continue ahead!!")
+
+if __name__ == "__main__":
+
+    first_name=input("Enter the First Name: ")
+    #Check first name
+    if valid_name(first_name):
+        print("Valid First Name, Continue ahead!!")
         
-        #Check Valid Email
-        email = input("Enter your email address: ")
-        if valid_email(email):
-            print("Email Valid!!")
+        #Check Last Name
+        last_name = input("Enter the Last Name: ")
+        if valid_name(last_name):
+            print("Valid Last Name, Continue ahead!!")
             
-            #Check Valid Phone Number:
-            phn = input("Enter Phone number: ")
-            
-            if (valid_number(phn)): 
-                print("Valid phone number!!")
+            #Check Valid Email
+            email = input("Enter your email address: ")
+            if valid_email(email):
+                print("Email Valid!!")
                 
-                #Valid Password
-                password = input("Enter your Password: ")
-                # print(valid_password(password))
-                if valid_password(password):
-                    print("Valid Password")
+                #Check Valid Phone Number:
+                phn = input("Enter Phone number: ")
                 
+                if (valid_number(phn)): 
+                    print("Valid phone number!!")
+                    
+                    #Valid Password
+                    password = input("Enter your Password: ")
+                    # print(valid_password(password))
+                    if valid_password(password):
+                        print("Valid Password")
+                    
+                    else:
+                        print("Invalid Password!!!\nRules:\nLength >= 8\nMust have a capital Letter\nMust have atleast 1 digit\nMust have exactly 1 special character")
+                    
                 else:
-                    print("Invalid Password!!!\nRules:\nLength >= 8\nMust have a capital Letter\nMust have atleast 1 digit\nMust have exactly 1 special character")
-                
+                    print("Not Valid phone number!")
             else:
-                print("Not Valid phone number!")
+                print("Invalid Email!")
+            
         else:
-            print("Invalid Email!")
-        
+            print("Last name is invalid!")
+            
+            
     else:
-        print("Last name is invalid!")
-        
-        
-else:
-    print("First name is invalid!")
+        print("First name is invalid!")
